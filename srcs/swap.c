@@ -6,7 +6,7 @@
 /*   By: grmortel <grmortel@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/17 13:58:05 by grmortel          #+#    #+#             */
-/*   Updated: 2023/10/31 18:24:48 by grmortel         ###   ########.fr       */
+/*   Updated: 2023/11/01 03:17:10 by grmortel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ static void	ft_swap(t_list **list)
 {
 	t_list	*tmp;
 
-	tmp = list;
+	tmp = *list;
 	list = (*list)->next;
 	tmp->next = tmp->next->next;
 	(*list)->next = tmp;
