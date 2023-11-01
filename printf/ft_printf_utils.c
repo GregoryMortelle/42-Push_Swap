@@ -6,7 +6,7 @@
 /*   By: grmortel <grmortel@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/21 18:20:28 by grmortel          #+#    #+#             */
-/*   Updated: 2023/04/23 12:38:15 by grmortel         ###   ########.fr       */
+/*   Updated: 2023/11/01 13:27:51 by grmortel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ size_t	ft_putstr(const char *str)
 }
 
 size_t	ft_putnbr(long long nbr)
-{	
+{
 	size_t	length;
 
 	length = 0;

@@ -1,34 +1,14 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memmove.c                                       :+:      :+:    :+:   */
+/*   reverse_rotate.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: grmortel <grmortel@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/10 12:34:28 by grmortel          #+#    #+#             */
-/*   Updated: 2023/11/01 13:28:28 by grmortel         ###   ########.fr       */
+/*   Created: 2023/11/01 13:37:10 by grmortel          #+#    #+#             */
+/*   Updated: 2023/11/01 13:40:32 by grmortel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "push_swap.h"
 
-void	*ft_memmove(void *dst, const void *src, size_t len)
-{
-	size_t	i;
-
-	i = 0;
-	if (!dst && !src)
-		return (NULL);
-	if ((char *)dst < (char *)src)
-	{
-		while (i < len)
-		{
-			((char *)dst)[i] = ((char *)src)[i];
-			i++;
-		}
-	}
-	else
-		while (len--)
-			((char *)dst)[len] = ((char *)src)[len];
-	return ((char *)dst);
-}

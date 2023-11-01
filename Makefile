@@ -6,14 +6,13 @@
 #    By: grmortel <grmortel@student.s19.be>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/17 13:35:50 by grmortel          #+#    #+#              #
-#    Updated: 2023/11/01 10:59:03 by grmortel         ###   ########.fr        #
+#    Updated: 2023/11/01 13:51:31 by grmortel         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = push_swap
 
-SRCS =	srcs/rotate.c \
-		srcs/swap.c   \
+SRCS =	srcs/rotate.c srcs/swap.c  
 
 LIBFT		=	./libft/libft.a
 LIBFT_DIR	=	./libft
