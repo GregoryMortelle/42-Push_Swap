@@ -1,44 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   swap.c                                             :+:      :+:    :+:   */
+/*   ft_bzero.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: grmortel <grmortel@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/17 13:58:05 by grmortel          #+#    #+#             */
-/*   Updated: 2023/10/31 18:24:48 by grmortel         ###   ########.fr       */
+/*   Created: 2023/03/21 14:57:19 by grmortel          #+#    #+#             */
+/*   Updated: 2023/03/23 23:08:36 by grmortel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "libft.h"
 
-static void	ft_swap(t_list **list)
+void	ft_bzero(void *s, size_t n)
 {
-	t_list	*tmp;
+	char	*i;
 
-	tmp = list;
-	list = (*list)->next;
-	tmp->next = tmp->next->next;
-	(*list)->next = tmp;
-}
-
-void	ft_sa(t_list *list)
-{
-	ft_swap(list);
-	ft_printf("sa\n");
-}
-
-void	ft_sb(t_list *list)
-{
-	ft_swap(list);
-	ft_printf("sb\n");
-}
-
-
-
-void	ft_ss(t_list *list)
-{
-	ft_swap(list);
-	ft_swap(list);
-	ft_printf("ss\n");
+	i = s;
+	while (n)
+	{
+		*i = 0;
+		i++;
+		n--;
+	}
 }

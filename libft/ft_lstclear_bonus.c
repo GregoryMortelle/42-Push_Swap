@@ -1,44 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   swap.c                                             :+:      :+:    :+:   */
+/*   ft_lstclear_bonus.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: grmortel <grmortel@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/17 13:58:05 by grmortel          #+#    #+#             */
-/*   Updated: 2023/10/31 18:24:48 by grmortel         ###   ########.fr       */
+/*   Created: 2023/04/18 14:17:57 by grmortel          #+#    #+#             */
+/*   Updated: 2023/04/18 17:56:43 by grmortel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "libft.h"
 
-static void	ft_swap(t_list **list)
+void	ft_lstclear(t_list **lst, void (*del)(void*))
 {
 	t_list	*tmp;
+	t_list	*first;
 
-	tmp = list;
-	list = (*list)->next;
-	tmp->next = tmp->next->next;
-	(*list)->next = tmp;
-}
-
-void	ft_sa(t_list *list)
-{
-	ft_swap(list);
-	ft_printf("sa\n");
-}
-
-void	ft_sb(t_list *list)
-{
-	ft_swap(list);
-	ft_printf("sb\n");
-}
-
-
-
-void	ft_ss(t_list *list)
-{
-	ft_swap(list);
-	ft_swap(list);
-	ft_printf("ss\n");
+	if (!lst || !del)
+		return ;
+	first = *lst;
+	while (first)
+	{
+		tmp = first->next;
+		del(first->content);
+		free(first);
+		first = tmp;
+	}
+	*lst = NULL;
 }

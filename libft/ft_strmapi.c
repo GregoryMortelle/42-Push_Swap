@@ -1,44 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   swap.c                                             :+:      :+:    :+:   */
+/*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: grmortel <grmortel@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/17 13:58:05 by grmortel          #+#    #+#             */
-/*   Updated: 2023/10/31 18:24:48 by grmortel         ###   ########.fr       */
+/*   Created: 2023/04/15 21:38:54 by grmortel          #+#    #+#             */
+/*   Updated: 2023/04/15 22:10:36 by grmortel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "libft.h"
 
-static void	ft_swap(t_list **list)
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
-	t_list	*tmp;
+	char	*string;
+	int		i;
 
-	tmp = list;
-	list = (*list)->next;
-	tmp->next = tmp->next->next;
-	(*list)->next = tmp;
-}
-
-void	ft_sa(t_list *list)
-{
-	ft_swap(list);
-	ft_printf("sa\n");
-}
-
-void	ft_sb(t_list *list)
-{
-	ft_swap(list);
-	ft_printf("sb\n");
-}
-
-
-
-void	ft_ss(t_list *list)
-{
-	ft_swap(list);
-	ft_swap(list);
-	ft_printf("ss\n");
+	if (!s || !f)
+		return (NULL);
+	string = (char *)malloc(sizeof(char) * (ft_strlen((char *)s) + 1));
+	if (!string)
+		return (NULL);
+	i = 0;
+	while (s[i])
+	{
+		string[i] = f(i, s[i]);
+		i++;
+	}
+	string[i] = '\0';
+	return (string);
 }

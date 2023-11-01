@@ -1,44 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   swap.c                                             :+:      :+:    :+:   */
+/*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: grmortel <grmortel@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/17 13:58:05 by grmortel          #+#    #+#             */
-/*   Updated: 2023/10/31 18:24:48 by grmortel         ###   ########.fr       */
+/*   Created: 2023/04/10 12:34:28 by grmortel          #+#    #+#             */
+/*   Updated: 2023/04/11 19:29:49 by grmortel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "libft.h"
 
-static void	ft_swap(t_list **list)
+void	*ft_memmove(void *dst, const void *src, size_t len)
 {
-	t_list	*tmp;
+	size_t	i;
 
-	tmp = list;
-	list = (*list)->next;
-	tmp->next = tmp->next->next;
-	(*list)->next = tmp;
-}
-
-void	ft_sa(t_list *list)
-{
-	ft_swap(list);
-	ft_printf("sa\n");
-}
-
-void	ft_sb(t_list *list)
-{
-	ft_swap(list);
-	ft_printf("sb\n");
-}
-
-
-
-void	ft_ss(t_list *list)
-{
-	ft_swap(list);
-	ft_swap(list);
-	ft_printf("ss\n");
+	i = 0;
+	if (!dst && !src)
+		return (NULL);
+	if ((char *)dst < (char *)src)
+	{
+		while (i < len)
+		{
+			((char *)dst)[i] = ((char *)src)[i];
+			i++;
+		}
+	}
+	else
+		while (len--)
+				((char *)dst)[len] = ((char *)src)[len];
+	return ((char *)dst);
 }

@@ -1,44 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   swap.c                                             :+:      :+:    :+:   */
+/*   rotate.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: grmortel <grmortel@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/17 13:58:05 by grmortel          #+#    #+#             */
-/*   Updated: 2023/10/31 18:24:48 by grmortel         ###   ########.fr       */
+/*   Created: 2023/10/31 11:48:28 by grmortel          #+#    #+#             */
+/*   Updated: 2023/10/31 18:31:00 by grmortel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static void	ft_swap(t_list **list)
+static void	ft_rotate(t_list **list)
 {
 	t_list	*tmp;
 
-	tmp = list;
+	tmp = *list;
+	tmp->next = NULL;
+	ft_lstadd_back(list, tmp);
 	list = (*list)->next;
-	tmp->next = tmp->next->next;
-	(*list)->next = tmp;
 }
 
-void	ft_sa(t_list *list)
+void	ft_ra(t_list **list)
 {
-	ft_swap(list);
-	ft_printf("sa\n");
+	ft_rotate(list);
+	ft_printf("ra\n");
 }
 
-void	ft_sb(t_list *list)
+void	ft_rb(t_list *list)
 {
-	ft_swap(list);
-	ft_printf("sb\n");
+	ft_rotate(list);
+	ft_printf("rb\n");
 }
 
-
-
-void	ft_ss(t_list *list)
+void	ft_rr(t_list *list)
 {
-	ft_swap(list);
-	ft_swap(list);
-	ft_printf("ss\n");
+	ft_ra(list);
+	ft_rb(list);
+	ft_printf("rr\n");
 }

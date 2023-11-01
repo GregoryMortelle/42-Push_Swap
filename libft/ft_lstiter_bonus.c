@@ -1,44 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   swap.c                                             :+:      :+:    :+:   */
+/*   ft_lstiter_bonus.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: grmortel <grmortel@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/17 13:58:05 by grmortel          #+#    #+#             */
-/*   Updated: 2023/10/31 18:24:48 by grmortel         ###   ########.fr       */
+/*   Created: 2023/04/18 14:39:48 by grmortel          #+#    #+#             */
+/*   Updated: 2023/04/18 17:55:22 by grmortel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "libft.h"
 
-static void	ft_swap(t_list **list)
+void	ft_lstiter(t_list *lst, void (*f)(void *))
 {
-	t_list	*tmp;
-
-	tmp = list;
-	list = (*list)->next;
-	tmp->next = tmp->next->next;
-	(*list)->next = tmp;
-}
-
-void	ft_sa(t_list *list)
-{
-	ft_swap(list);
-	ft_printf("sa\n");
-}
-
-void	ft_sb(t_list *list)
-{
-	ft_swap(list);
-	ft_printf("sb\n");
-}
-
-
-
-void	ft_ss(t_list *list)
-{
-	ft_swap(list);
-	ft_swap(list);
-	ft_printf("ss\n");
+	if (!f)
+		return ;
+	while (lst)
+	{
+		f(lst->content);
+		lst = lst->next;
+	}
 }
