@@ -6,11 +6,11 @@
 /*   By: grmortel <grmortel@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/31 11:48:28 by grmortel          #+#    #+#             */
-/*   Updated: 2023/10/31 18:31:00 by grmortel         ###   ########.fr       */
+/*   Updated: 2023/11/01 13:38:55 by grmortel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../include/push_swap.h"
 
 static void	ft_rotate(t_list **list)
 {
