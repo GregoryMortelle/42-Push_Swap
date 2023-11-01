@@ -6,7 +6,7 @@
 /*   By: grmortel <grmortel@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/17 13:58:05 by grmortel          #+#    #+#             */
-/*   Updated: 2023/11/01 14:02:17 by grmortel         ###   ########.fr       */
+/*   Updated: 2023/11/01 17:01:59 by grmortel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@ static void	ft_swap(t_list **list)
 {
 	t_list	*tmp;
 
+	if (ft_lstsize(list) < 2)
+		return ;
 	tmp = *list;
 	(*list) = (*list)->next;
 	tmp->next = tmp->next->next;
