@@ -1,44 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   swap.c                                             :+:      :+:    :+:   */
+/*   push.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: grmortel <grmortel@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/17 13:58:05 by grmortel          #+#    #+#             */
-/*   Updated: 2023/11/02 13:36:11 by grmortel         ###   ########.fr       */
+/*   Created: 2023/11/01 17:20:42 by grmortel          #+#    #+#             */
+/*   Updated: 2023/11/02 14:02:37 by grmortel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
 
-static void	ft_swap(t_list **list)
+void	ft_pa(t_list **list_a, t_list **list_b)
 {
 	t_list	*tmp;
 
-	if (ft_lstsize((*list)) < 2)
-		return ;
-	tmp = *list;
-	(*list) = (*list)->next;
-	tmp->next = tmp->next->next;
-	(*list)->next = tmp;
+	tmp = *list_b;
+	tmp->next = NULL;
+	ft_lstadd_front(list_a, tmp);
+	ft_printf("pa\n");
 }
 
-void	ft_sa(t_list *list)
+void	ft_pb(t_list **list_a, t_list **list_b)
 {
-	ft_swap(&list);
-	ft_printf("sa\n");
-}
+	t_list	*tmp;
 
-void	ft_sb(t_list *list)
-{
-	ft_swap(&list);
-	ft_printf("sb\n");
-}
-
-void	ft_ss(t_list *list)
-{
-	ft_swap(&list);
-	ft_swap(&list);
-	ft_printf("ss\n");
+	tmp = *list_a;
+	tmp->next = NULL;
+	ft_lstadd_front(list_b, tmp);
+	ft_printf("pb\n");
 }
