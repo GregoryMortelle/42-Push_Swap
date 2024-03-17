@@ -6,7 +6,7 @@
 /*   By: grmortel <grmortel@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/17 13:58:05 by grmortel          #+#    #+#             */
-/*   Updated: 2023/11/02 13:36:11 by grmortel         ###   ########.fr       */
+/*   Updated: 2024/03/17 17:22:20 by grmortel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,18 +27,18 @@ static void	ft_swap(t_list **list)
 void	ft_sa(t_list *list)
 {
 	ft_swap(&list);
-	ft_printf("sa\n");
+	write(1, "sa\n", 3);
 }
 
 void	ft_sb(t_list *list)
 {
 	ft_swap(&list);
-	ft_printf("sb\n");
+	write(1, "sb\n", 3);
 }
 
 void	ft_ss(t_list *list)
 {
 	ft_swap(&list);
 	ft_swap(&list);
-	ft_printf("ss\n");
+	write(1, "ss\n", 3);
 }

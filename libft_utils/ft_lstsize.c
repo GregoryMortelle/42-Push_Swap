@@ -1,33 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
+/*   ft_lstsize.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: grmortel <grmortel@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/03 14:12:06 by grmortel          #+#    #+#             */
-/*   Updated: 2023/04/04 10:15:47 by grmortel         ###   ########.fr       */
+/*   Created: 2023/04/18 11:42:50 by grmortel          #+#    #+#             */
+/*   Updated: 2024/03/17 17:19:55 by grmortel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../include/push_swap.h"
 
-void	ft_putnbr_fd(int n, int fd)
+int	ft_lstsize(t_list *lst)
 {
-	if (fd < 0)
-		return ;
-	if (n < 0)
+	int	i;
+
+	i = 1;
+	if (!lst)
+		return (0);
+	while (lst->next != NULL)
 	{
-		ft_putchar_fd('-', fd);
-		n = -n;
+		lst = lst->next;
+		i++;
 	}
-	if (n > 9)
-	{
-		ft_putnbr_fd(n / 10, fd);
-		ft_putnbr_fd(n % 10, fd);
-	}
-	else if (n == INT_MIN)
-		ft_putstr_fd("2147483648", fd);
-	else
-		ft_putchar_fd(n + 48, fd);
+	return (i);
 }

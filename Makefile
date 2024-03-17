@@ -6,36 +6,24 @@
 #    By: grmortel <grmortel@student.s19.be>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/17 13:35:50 by grmortel          #+#    #+#              #
-#    Updated: 2023/11/01 13:51:31 by grmortel         ###   ########.fr        #
+#    Updated: 2024/03/17 16:24:00 by grmortel         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = push_swap
 
-SRCS =	srcs/rotate.c srcs/swap.c  
-
-LIBFT		=	./libft/libft.a
-LIBFT_DIR	=	./libft
-
-PRINTF      =   ./printf/libftprintf.a
-PRINTF_DIR  =   ./printf
+SRCS =	srcs/rotate.c srcs/swap.c  srcs/reverse_rotate.c srcs/push.c libft_utils/ft_lstadd_back.c libft_utils/ft_lstadd_front.c libft_utils/ft_lstlast.c libft_utils/ft_lstsize.c
 
 OBJ = $(SRCS:.c=.o)
 
-CFLAGS = -Wall -Wextra -Werror
-
 GCC = gcc
 
-RM = rm -f
+CFLAGS = -Wall -Wextra -Werror 
+
+RM = rm -rf
 
 $(NAME): $(OBJ)
-	 $(NAME) $(OBJ) $(LIBFT) $(PRINTF)
-
-$(LIBFT):
-	@ $(MAKE) -C ./libft
-
-$(PRINTF):
-	@ $(MAKE) -C ./printf
+	 $(NAME) $(OBJ)
 
 .c.o:
 	$(GCC) $(CFLAGS) -c $< -o $(<:.c=.o) 
