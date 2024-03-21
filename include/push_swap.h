@@ -6,7 +6,7 @@
 /*   By: grmortel <grmortel@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/17 13:37:02 by grmortel          #+#    #+#             */
-/*   Updated: 2024/03/17 17:19:35 by grmortel         ###   ########.fr       */
+/*   Updated: 2024/03/21 15:20:20 by grmortel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,22 @@
 
 #include <stdlib.h>
 #include <unistd.h>
+#include <stdlib.h>
 
 // STRUCT PART
+
+typedef struct s_node
+{
+	int	data;
+	struct s_node	*next;
+}	t_node;
+
+typedef struct s_stack
+
+{
+	t_node	top;
+	int	lenght;
+}	t_stack;
 
 typedef struct s_list
 {
@@ -43,6 +57,9 @@ void	ft_lstadd_back(t_list **lst, t_list *new);
 void	ft_lstadd_front(t_list **lst, t_list *new);
 t_list	*ft_lstlast(t_list *lst);
 int	ft_lstsize(t_list *lst);
+size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize);
+char	**ft_split(const char *str, char c);
+int	ft_atoi(const char *nptr);
 
 
 
