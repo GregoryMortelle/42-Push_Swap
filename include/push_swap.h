@@ -6,7 +6,7 @@
 /*   By: grmortel <grmortel@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/17 13:37:02 by grmortel          #+#    #+#             */
-/*   Updated: 2024/03/21 15:20:20 by grmortel         ###   ########.fr       */
+/*   Updated: 2024/03/28 01:46:21 by grmortel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ typedef struct s_stack
 
 {
 	t_node	top;
-	int	lenght;
+	int	length;
 }	t_stack;
 
 typedef struct s_list
