@@ -6,7 +6,7 @@
 /*   By: grmortel <grmortel@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/17 13:37:02 by grmortel          #+#    #+#             */
-/*   Updated: 2024/03/28 01:46:21 by grmortel         ###   ########.fr       */
+/*   Updated: 2024/04/01 05:39:47 by grmortel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@
 typedef struct s_node
 {
 	int	data;
+	struct s_node	*head;
 	struct s_node	*next;
 }	t_node;
 

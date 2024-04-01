@@ -6,7 +6,7 @@
 /*   By: grmortel <grmortel@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/21 15:10:06 by grmortel          #+#    #+#             */
-/*   Updated: 2024/03/21 15:13:50 by grmortel         ###   ########.fr       */
+/*   Updated: 2024/04/01 05:30:55 by grmortel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,19 @@
 
 int	main(int ac, char **av)
 {
-	(void)ac;
-	(void)av;
-	printf("Hello Push Swap !");
+	t_stack	*s_a;
+	t_stack	*s_b;
+	char	**split;
+
+	s_a = init_stack();
+	s_b = init_stack();
+
+	if (ac == 2)
+	{
+		split = ft_split(av[1], 32);
+		if (!split)
+			return (0);
+	}
+	free_stack(s_a);
+	free_stack(s_b);
 }
