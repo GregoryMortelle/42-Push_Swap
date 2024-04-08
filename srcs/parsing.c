@@ -6,10 +6,15 @@
 /*   By: grmortel <grmortel@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/28 01:38:16 by grmortel          #+#    #+#             */
-/*   Updated: 2024/04/01 05:13:20 by seprovv          ###   ########.fr       */
+/*   Updated: 2024/04/08 13:46:40 by seprovv          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/pushswap"
 
+int	stack_exist(t_stack *stack_a)
+{
+	t_node *curent;
 
+	current =  
+}
